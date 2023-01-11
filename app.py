@@ -9,7 +9,7 @@ app = Flask(__name__)
 
 # # Replace YOUR_API_KEY with your actual API key
 openai.api_key = os.environ.get("OPENAI_API_KEY")
-
+print(os.environ.get("OPENAI_API_KEY"))
 
 def summarize_transcript(transcript,points):
     
@@ -48,8 +48,7 @@ def home():
     return render_template('index.html',summary=summary,transcript=transcript)
 
 
-if __name__ == "__main__":
-    app.run()
+
 
 
 
