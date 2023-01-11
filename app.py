@@ -8,8 +8,8 @@ import os
 app = Flask(__name__)
 
 # # Replace YOUR_API_KEY with your actual API key
-openai.api_key = os.getenv("OPENAI_API_KEY")
-print(os.getenv("OPENAI_API_KEY"))
+openai.api_key = "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"
+# print(os.environ.get("OPENAI_API_KEY"))
 
 def summarize_transcript(transcript,points):
     
@@ -32,6 +32,7 @@ def summarize_transcript(transcript,points):
 def home():
     summary = ""
     transcript = []
+
     if request.method == 'POST':
        
         # Retrieve the URL from the form input
@@ -46,8 +47,6 @@ def home():
         return render_template('index.html', summary=final_summary,transcript=transcript)
 
     return render_template('index.html',summary=summary,transcript=transcript)
-
-
 
 
 
